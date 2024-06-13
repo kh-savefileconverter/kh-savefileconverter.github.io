@@ -7,15 +7,20 @@
 </head>
 <body>
     <h1>Kingdom Hearts 1.5+2.5 + DDD Savefile Converter</h1>
-	<h2>To use this tool, you first must create an empty savefile to convert to (so an empty KHIIFM_WW.png if you want to convert to Steam or an empty KHIIFM.png if you want to convert to Epic Games)
+	<h2>To use this tool, you first must create an empty savefile (in-game, not manually) to convert to.</h2><h4>(so an empty KHIIFM_WW.png if you want to convert to Steam or an empty KHIIFM.png if you want to convert to Epic Games)</h4>
 	<h3>Convert from (put your original savefile here):</h3>
     <input type="file" id="file1" accept=".png">
-	<h3>Convert to (put your empty savefile you want to play with here):</h3>
+	<h3>Convert to (put your empty savefile here):</h3>
     <input type="file" id="file2" accept=".png">
 	<br><br>
     <button onclick="copyHexOffsets()">Convert</button>
     <br><br>
     <a id="download1" style="display: none;">Download converted savefile</a>
+	
+	<br><br><h3>This can also be used to convert somebody else's savefile to yours.</h3>
+	<h3>If you only want to convert an individual save slot rather than the whole file, you can use  <a href="https://github.com/Xeeynamo/KingdomSaveEditor/releases/tag/v1.15.5">Kingdom Save Editor</a> instead.<h3>
+	<h3>If you wish to also carry over your achievements, you can do it manually using <a href="https://github.com/syntax-tm/SteamAchievementManager/releases/latest">Steam Achievement Manager</a>.
+	<h4><a href="https://github.com/kh-savefileconverter/kh-savefileconverter.github.io/blob/main/copyHexOffsets.js">This tool doesn't do a lot btw -it just copies over hex offsets</a></h4>
 
     <script src="copyHexOffsets.js"></script>
 </body>
