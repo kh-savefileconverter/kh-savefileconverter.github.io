@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kingdom Hearts 1.5+2.5 + DDD Savefile Converter</title>
+</head>
+<body>
+    <h1>Kingdom Hearts 1.5+2.5 + DDD Savefile Converter</h1>
+	<h2>To use this tool, you first must create an empty savefile to convert to (so an empty KHIIFM_WW.png if you want to convert to Steam or an empty KHIIFM.png if you want to convert to Epic Games)
+	<h3>Convert from (put your original savefile here):</h3>
+    <input type="file" id="file1" accept=".png">
+	<h3>Convert to (put your empty savefile you want to play with here):</h3>
+    <input type="file" id="file2" accept=".png">
+	<br><br>
+    <button onclick="copyHexOffsets()">Convert</button>
+    <br><br>
+    <a id="download1" style="display: none;">Download converted savefile</a>
+
+    <script src="copyHexOffsets.js"></script>
+</body>
+</html>
