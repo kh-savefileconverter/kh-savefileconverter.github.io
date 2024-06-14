@@ -12,29 +12,6 @@ function copyHexOffsets() {
         alert("Please select two files.");
         return;
     }
-	else if (fileInput1.name.startsWith('KHIII')){
-		alert("Kingdom Hearts III savefiles are not supported.");
-		return;
-	}
-	else if (fileInput1.name.startsWith('KH0.2')){
-		alert("Kingdom Hearts 0.2 savefiles are not supported.");
-		return;
-	}
-	else if (fileInput1.name.startsWith('KH3DHD')){
-		alert("Kingdom Hearts DDD savefiles are not supported.");
-		return;
-	}
-	else if ((fileInput1.name.startsWith('KH') && !fileInput1.name.endsWith('.png')) && (!fileInput2.name.startsWith('KH') && !fileInput2.name.endsWith('.png'))){
-		alert("The files selected are not Kingdom Hearts savefiles.");
-	}
-	else if (!fileInput1.name.startsWith('KH') && !fileInput1.name.endsWith('.png')){
-		alert("File 1 (Convert from slot) is not a Kingdom Hearts savefile.");
-		return;
-	}
-	else if (!fileInput2.name.startsWith('KH') && !fileInput2.name.endsWith('.png')){
-		alert("File 2 (Convert to slot) is not a Kingdom Hearts savefile.");
-		return;
-	}
     else if (!areBaseNamesSame(fileInput1.name, fileInput2.name)) {
         alert("Savefiles are not of the same game.");
         return;
