@@ -28,8 +28,8 @@ function copyHexOffsets() {
             const arrayBuffer2 = e2.target.result;
             const uint8Array2 = new Uint8Array(arrayBuffer2);
 
-            // Copy offsets from 00000000 to 00000150
-            for (let i = 0; i <= 0x150; i++) {
+            // Copy offsets from 00000000 to 00000160
+            for (let i = 0; i <= 0x160; i++) {
                 uint8Array1[i] = uint8Array2[i];
             }
 
