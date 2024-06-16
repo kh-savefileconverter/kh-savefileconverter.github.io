@@ -12,7 +12,7 @@ function copyHexOffsets() {
         alert("Please select two files.");
         return;
     } else if (!areBaseNamesSame(fileInput1.name, fileInput2.name)) {
-        alert("Savefiles are not of the same game.");
+        alert("Savefiles are not of the same game or the filename is modified.");
         return;
     }
 
@@ -26,13 +26,6 @@ function copyHexOffsets() {
         reader2.onload = function (e2) {
             const arrayBuffer2 = e2.target.result;
             const uint8Array2 = new Uint8Array(arrayBuffer2);
-
-            // Ensure that both files are large enough
-            const requiredSize1 = 0x6AB064;
-            if (uint8Array1.length < requiredSize1 || uint8Array2.length < requiredSize1) {
-                alert("Files are too small to contain the necessary data.");
-                return;
-            }
 
             // Copy offsets from 00000000 to 00000160 while retaining specific bytes
             for (let i = 0; i <= 0x160; i++) {
