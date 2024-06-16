@@ -11,8 +11,9 @@ function copyHexOffsets() {
     if (!fileInput1 || !fileInput2) {
         alert("Please select two files.");
         return;
-    } else if (!areBaseNamesSame(fileInput1.name, fileInput2.name)) {
-        alert("Savefiles are not of the same game or the filename is modified.");
+    }
+    else if (!areBaseNamesSame(fileInput1.name, fileInput2.name)) {
+        alert("Savefiles are not of the same game.");
         return;
     }
 
@@ -27,21 +28,9 @@ function copyHexOffsets() {
             const arrayBuffer2 = e2.target.result;
             const uint8Array2 = new Uint8Array(arrayBuffer2);
 
-            // Copy offsets from 00000000 to 00000160 while retaining specific bytes
+            // Copy offsets from 00000000 to 00000160
             for (let i = 0; i <= 0x160; i++) {
-                if ((i >= 0x70 && i <= 0x7F) || (i >= 0xB0 && i <= 0xBC)) {
-                    continue; // Skip these ranges to retain original bytes
-                }
-                if (i === 0x80 || i === 0x81) {
-                    continue; // Skip these bytes to retain the original bytes
-                }
                 uint8Array1[i] = uint8Array2[i];
-            }
-
-            // Replace bytes at offset 006AB060
-            const offset = 0x6AB060;
-            for (let i = 0; i < 4; i++) {
-                uint8Array1[offset + i] = uint8Array2[offset + i];
             }
 
             // Create new file

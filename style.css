@@ -9,13 +9,16 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 .main-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
     margin-top: 20px;
+    width: 100%;
 }
 
 .converter-window, .example-window {
@@ -24,17 +27,17 @@ body {
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     margin: 10px;
+    width: 100%;
+    max-width: 350px;
 }
 
 .converter-window {
     text-align: center;
-    width: 350px;
-    order: 1;
 }
 
 .example-window {
-    width: 400px;
-    order: 2;
+    width: 100%;
+    max-width: 500px;
 }
 
 .save-locations {
@@ -42,7 +45,7 @@ body {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    margin-top: 20px;
+    margin-top: 5px;
     width: 80%;
     max-width: 600px;
     text-align: center;
@@ -121,4 +124,19 @@ a:hover {
     width: 80%;
     max-width: 600px;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    .converter-window, .example-window, .save-locations, .additional-info {
+        width: 90%;
+        margin: 10px 0;
+    }
+    
+    h1, h2 {
+        font-size: 1.2em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
 }
